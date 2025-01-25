@@ -48,3 +48,4 @@ quizData.options.forEach((option, index) => {
 
 
 }
+
