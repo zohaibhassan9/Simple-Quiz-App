@@ -27,3 +27,5 @@ const options = document.getElementById('options');
 const submitBtn = document.getElementById('submit');
 const  result = document.getElementById('result');
 
+
+
