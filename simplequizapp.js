@@ -35,4 +35,16 @@ function loadQuiz(){
 const currentData = quizData[currentQuiz];
 question.textContent = currentData.question;
 
+question.innerHTML = '';
+
+
+quizData.options.forEach((option, index) => {
+    const option1  = document.createElement('li');
+    option1.innerHTML = `
+    <label type = "radio" name = "answer" value = "${index}">${option}</label>
+    `;
+    options.appendChild(option1);
+});
+
+
 }
