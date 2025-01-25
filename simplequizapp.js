@@ -1,4 +1,4 @@
-const questions = [
+const quizData = [
     {
 question: "What is the capital of France",
 options: ["Karachi", "Qatr", "Berlin", "France"],
@@ -19,3 +19,11 @@ options: [
 
    },
 ];
+
+
+const quiz = document.getElementById('quiz');
+const question  = document.getElementById('question');
+const options = document.getElementById('options');
+const submitBtn = document.getElementById('submit');
+const  result = document.getElementById('result');
+
