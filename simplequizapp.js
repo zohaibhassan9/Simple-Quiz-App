@@ -28,4 +28,7 @@ const submitBtn = document.getElementById('submit');
 const  result = document.getElementById('result');
 
 
+let currentQuiz = 0;
+let score = 0;
+
 
