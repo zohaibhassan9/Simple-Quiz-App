@@ -31,4 +31,8 @@ const  result = document.getElementById('result');
 let currentQuiz = 0;
 let score = 0;
 
+function loadQuiz(){
+const currentData = quizData[currentQuiz];
+question.textContent = currentData.question;
 
+}
