@@ -45,7 +45,18 @@ quizData.options.forEach((option, index) => {
     `;
     options.appendChild(option1);
 });
+}
 
 
+function getSelected(){
+    const answers = document.querySelectorAll("input[name:'answer']");
+    let selectedAnswer = null;
+
+    answers.forEach((answer)=>{
+        if (answer.checked){
+            selectedAnswer = parseFloat(answer.value);
+        }
+    })
+    return selectedAnswer;
 }
 
