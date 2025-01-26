@@ -60,3 +60,11 @@ function getSelected(){
     return selectedAnswer;
 }
 
+
+function showResult(){
+const quiz1 = document.getElementById('quiz');
+quiz1.style.display = "none";
+result.style.display = 'block';
+result.innerHTML = `<h2>Your result: ${score} / ${quizData.length}</h2>`
+}
+
