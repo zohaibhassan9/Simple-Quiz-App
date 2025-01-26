@@ -35,24 +35,24 @@ let score = 0;
 function loadQuiz(){
 const currentData = quizData[currentQuiz];
 question.textContent = currentData.question;
-
-question.innerHTML = '';
+options.innerHTML = '';
 
 
 currentData.options.forEach((option, index) => {
     const option1  = document.createElement('li');
     option1.innerHTML = `    
 <label>
-<input type = "radio" name = "answer" value = "${index}"/>${option}
+<input type="radio" name="answer" value="${index}">
+${option}
 </label>
-         `;
+     `;
     options.appendChild(option1);
 });
 }
 
 
 function getSelected(){
-    const answers = document.querySelectorAll("input[name= 'answer']");
+    const answers = document.querySelectorAll("input[name='answer']")
     let selectedAnswer = null;
 
     answers.forEach((answer)=>{
