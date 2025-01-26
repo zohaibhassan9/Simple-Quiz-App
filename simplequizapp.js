@@ -15,13 +15,14 @@ options: [
     "Hyper Text Markup Language",
     "Hot Mail",
     "How To Make Links",
-    "None of the above",]
+    "None of the above",],
+    answer: 0,
 
    },
 ];
 
 
-const quiz = document.getElementById('quiz');
+// const quiz = document.getElementById('quiz');
 const question  = document.getElementById('question');
 const options = document.getElementById('options');
 const submitBtn = document.getElementById('submit');
@@ -38,18 +39,20 @@ question.textContent = currentData.question;
 question.innerHTML = '';
 
 
-quizData.options.forEach((option, index) => {
+currentData.options.forEach((option, index) => {
     const option1  = document.createElement('li');
-    option1.innerHTML = `
-    <label type = "radio" name = "answer" value = "${index}">${option}</label>
-    `;
+    option1.innerHTML = `    
+<label>
+<input type = "radio" name = "answer" value = "${index}"/>${option}
+</label>
+         `;
     options.appendChild(option1);
 });
 }
 
 
 function getSelected(){
-    const answers = document.querySelectorAll("input[name:'answer']");
+    const answers = document.querySelectorAll("input[name= 'answer']");
     let selectedAnswer = null;
 
     answers.forEach((answer)=>{
@@ -68,3 +71,28 @@ result.style.display = 'block';
 result.innerHTML = `<h2>Your result: ${score} / ${quizData.length}</h2>`
 }
 
+
+submitBtn.addEventListener('click', ()=>{
+    const answer = getSelected();
+
+
+if(answer === null){
+    alert('Please enter a correct number');
+    return;
+}
+
+if (answer === quizData[currentQuiz].answer){
+score++;
+}
+
+currentQuiz++;
+
+if(currentQuiz < quizData.length){
+loadQuiz()
+}
+else {
+ showResult();
+}
+});
+
+loadQuiz();
